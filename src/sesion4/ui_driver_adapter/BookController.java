@@ -12,7 +12,7 @@ public class BookController {
     @Autowired
     private BookService bookService;
     @GetMapping("/books")
-    public ResponseEntity getBook(@RequestParam Long id) {
+    public ResponseEntity<Object> getBook(@RequestParam Long id) {
         try {
             return ResponseEntity.ok(bookService.getBook(id));
         } catch (BookDoesNotExistException e){
